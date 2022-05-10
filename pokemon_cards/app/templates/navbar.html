@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='navbar.css') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="profile">
+        {%if current_user%}
+        <h3>Username: {{current_user.name}}</h3>
+        {%endif%}
+      </div>
+      <div class="links">
+        <a href="{{url_for('users_bp.login')}}">Login</a>
+        <a href="{{url_for('users_bp.logout')}}">Logout</a>
+        <a href="{{url_for('users_bp.signup')}}">Signup</a>
+        <a href="{{url_for('forum_bp.posts')}}">Forum</a>
+        <a href="{{url_for('trading_bp.market')}}">Trading</a>
+        <a href="{{url_for('profiles_bp.display')}}">Profile</a>
+        <a href="http://localhost:3000/">Map</a>
+      </div>
+    </div>
+    <div class="navbar-vertical">
+      <div class="profile">
+        {%if current_user%}
+        <h3>Username: {{current_user.name}}</h3>
+        {%endif%}
+      </div>
+      <h2 class="menu-btn">menu</h2>
+      <input id="toggle" type="checkbox" />
+      <div class="vetical-links">
+        <a href="{{url_for('users_bp.login')}}">Login</a>
+        <a href="{{url_for('users_bp.logout')}}">Logout</a>
+        <a href="{{url_for('users_bp.signup')}}">Signup</a>
+        <a href="{{url_for('forum_bp.posts')}}">Forum</a>
+        <a href="{{url_for('trading_bp.market')}}">Trading</a>
+        <a href="{{url_for('profiles_bp.display')}}">Profile</a>
+        <a href="http://localhost:3000/">Map</a>
+      </div>
+    </div>
+    <div class="navbar-space"></div>
+  </body>
+</html>

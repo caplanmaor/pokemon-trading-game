@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  {%block content%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='cards.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('forum_bp.static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    {% if current_user.name %} {%if main_pokemon%}
+    <div class="post">
+      <h1>welcome {{current_user.name}}</h1>
+      <h2>your main pokemon is {{main_pokemon.name}}</h2>
+      <img class="main-img" src="{{main_pokemon.img}}" />
+      <h2>you currently have: {{currency}}$</h2>
+    </div>
+    <h2>Personal Card Collection:</h2>
+    <div class="cards">
+      {%for pokemon in cards%}
+      <div class="card">
+        <h4>{{pokemon.name}}</h4>
+        <img class="img" src="{{pokemon.img}}" />
+      </div>
+      {%endfor%}
+    </div>
+    {%else%}
+    <h1>you havent chosen your main pokemon yet</h1>
+    <a href="http://127.0.0.1:5000/profiles/create">create a profile</a>
+    {%endif%} {%else%}
+    <h1>you havent logged in yet</h1>
+    <a href="http://127.0.0.1:5000/users/login">login</a>
+    {%endif%} {%endblock%}
+  </body>
+</html>

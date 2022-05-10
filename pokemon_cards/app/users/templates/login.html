@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block content %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('forum_bp.static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="post">
+      <h1>Log In</h1>
+      <form method="POST" class="form">
+        {{ form.hidden_tag() }} <br />
+        {{ form.username.label }} {{ form.username()|safe }} <br />
+        {{ form.password.label }} {{ form.password()|safe }}
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    {%endblock%}
+  </body>
+</html>
