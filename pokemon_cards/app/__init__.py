@@ -1,5 +1,5 @@
 from flask import Flask
-import random
+# import random
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -9,7 +9,7 @@ import flask_login
 
 # Flask Object
 app = Flask(__name__)
-app.config['SECRET_KEY'] = random._urandom(56)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['DEBUG'] = True
 
 os.system('export FLASK_ENV=development')
@@ -21,11 +21,11 @@ login_manager = flask_login.LoginManager(app)
 
 
 # Database Connection
-db_info = {'host': '172.18.0.2',
-           'database': 'pokemon_cards',
-           'psw': 'postgres',
-           'user': 'postgres',
-           'port': '5433'}
+db_info = {'host': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+           'database': 'df5bsobjmmt5um',
+           'psw': 'f0856cc2d137c368129f0730357fcca48743cd863d3d16bdd7730cc77c37af42',
+           'user': 'tipwemzvntcnhj',
+           'port': '5432'}
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = f"postgresql://{db_info['user']}:{db_info['psw']}@{db_info['host']}/{db_info['database']}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
