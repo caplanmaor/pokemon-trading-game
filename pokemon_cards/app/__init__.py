@@ -9,7 +9,7 @@ import flask_login
 
 # Flask Object
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ('SECRET_KEY')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['DEBUG'] = True
 
 os.system('export FLASK_ENV=development')
