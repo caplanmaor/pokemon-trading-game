@@ -75,7 +75,9 @@ function PokemonMarker() {
       <Marker icon={pokemon_icon} position={pokemon}>
         <Popup>
           I am a pokemon <br />
-          <a href="http://localhost:5000/map/get_random">collect me</a>
+          <a href="https://pokemon-trading-cards.herokuapp.com/map/get_random">
+            collect me
+          </a>
         </Popup>
       </Marker>
       <Circle center={pokemon} pathOptions={fillBlueOptions} radius={200} />
