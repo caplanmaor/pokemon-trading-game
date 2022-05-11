@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, redirect, url_for
 import random
 from app import db
 from app.models import Pokemons,Profiles, Users, Decks
