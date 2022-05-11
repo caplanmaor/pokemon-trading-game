@@ -74,7 +74,7 @@ function PokemonMarker() {
     <div>
       <Marker icon={pokemon_icon} position={pokemon}>
         <Popup>
-          I am a pokemon <br />
+          i am a pokemon! to collect me click: <br />
           <a href="https://pokemon-trading-cards.herokuapp.com/map/get_random">
             collect me
           </a>
